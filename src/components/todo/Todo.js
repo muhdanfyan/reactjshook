@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import TodoList from '../todo-list/TodoList'
 import TodoCreate from '../todo-create/TodoCreate'
 
 const Todo = () => {
-    const todos = [
+    const [todos, setTodos] = useState([
         { id:1, title:'Eat' },
         { id:2, title:'Sleep' },
         { id:3, title:'Code' },
-    ]
+    ])
 
     const eventCreateToDo = (todo) =>{
-        todos.push(todo)
+        setTodos(todos.concat(todo))
         console.log(todos)
     }
 
